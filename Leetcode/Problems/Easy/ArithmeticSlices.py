@@ -18,5 +18,23 @@ class Solution:
             
                     
         return count
+
+class Solution:
+    def numberOfArithmeticSlices(self, nums: List[int]) -> int:
+        #Brute Force
+        #Space Optimized soln
+        count = 0
+        dp = 0
+        n = len(nums)
+        for i in range(2,n):
+            if nums[i-1]-nums[i-2] == nums[i]-nums[i-1]:
+                dp += 1
+                count+=dp
+            else:
+                dp=0
+                    
+        return count
+                
+
                 
 
